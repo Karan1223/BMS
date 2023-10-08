@@ -1,0 +1,45 @@
+<p class="text-center text-blue-500 text-2xl font-bold my-4">Welcome Manager!</p>
+
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
+    <form class="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 w-96">
+        <div class="mb-6">
+            <h3 class="text-3xl font-bold text-center mb-4 text-blue-500">Create Account</h3>
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                Name:
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" name="name" type="text" [(ngModel)]="name" />
+        </div>
+        <div class="mb-6">
+        
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                Username:
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" name="username" type="text" [(ngModel)]="username" />
+        </div>
+        <div class="mb-6">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                Password:
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" name="password" type="password" [(ngModel)]="password" />
+        </div>
+        <div class="mb-6">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="type">
+                User Type:
+            </label>
+            <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="type" name="type" [(ngModel)]="type">
+                <option value="resident">Resident</option>
+                <option value="security">Security</option>
+                <option value="supervisor">Supervisor</option>
+            </select>
+        </div>
+        <div class="flex items-center justify-center">
+            <button (click)="login()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline" type="submit">
+                Singup
+            </button>
+        </div>
+        <div *ngIf="errorMsg" class="text-red-500 text-sm font-bold mb-4">
+            {{ errorMsg }}
+        </div>
+    </form>
+</div>
+
